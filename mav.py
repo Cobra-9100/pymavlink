@@ -7,6 +7,7 @@ the_connection = mavutil.mavlink_connection('udpin:127.0.0.1:14500')
 # Ждем получения первого пакета от MAVProxy для синхронизации
 the_connection.wait_heartbeat()
 
+
 # Отправка данных о местоположении
 def send_gps_data(latitude, longitude, altitude):
     msg = the_connection.mav.gps_raw_int_encode(
